@@ -1,0 +1,50 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Character Print Test
+      id: character-print-test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Character Print Test
+        setup-command: "./setup.sh"
+        command: "./tests/run-character.sh"
+        timeout: 10
+        max-score: 5
+    - name: Even Sum Test
+      id: even-sum-test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Even Sum Test
+        setup-command: "./setup.sh"
+        command: "./tests/run-even.sh"
+        timeout: 10
+        max-score: 5
+    - name: Triangle Test
+      id: triangle-test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Triangle Test
+        setup-command: "./setup.sh"
+        command: "./tests/run-triangle.sh"
+        timeout: 10
+        max-score: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        CHARACTER-PRINT-TEST_RESULTS: "${{steps.character-print-test.outputs.result}}"
+        EVEN-SUM-TEST_RESULTS: "${{steps.even-sum-test.outputs.result}}"
+        TRIANGLE-TEST_RESULTS: "${{steps.triangle-test.outputs.result}}"
+      with:
+        runners: character-print-test,even-sum-test,triangle-test
