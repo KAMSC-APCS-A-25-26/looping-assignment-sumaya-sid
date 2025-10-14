@@ -10,6 +10,7 @@ public class NumberTrianglePattern {
 
         // TODO: Step 2 - Generate the number triangle pattern
         if (num>0) {
+            System.out.println();
             for (int j = 1; j < num + 1; j++) {
                 for (int k = 1; k <= j; k++) {
                     if (j != k) {
