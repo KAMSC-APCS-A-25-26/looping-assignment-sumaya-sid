@@ -11,6 +11,10 @@ public class SumOfEvenNumbers {
             int sum = (2 + num);
             System.out.print("The sum of even numbers between 2 and " + num + " is " + sum + ".");
         }
+        else
+        {
+            System.out.print("Error: Input must be 2 or greater.");
+        }
         // TODO: Step 3 - Calculate sum of even numbers
         
         // TODO: Step 4 - Display the result
