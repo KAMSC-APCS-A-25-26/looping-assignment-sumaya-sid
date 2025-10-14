@@ -22,5 +22,8 @@ public class NumberTrianglePattern {
                 System.out.println();
             }
         }
+        else {
+            System.out.println();
+        }
     }
 }
