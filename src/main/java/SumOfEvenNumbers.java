@@ -6,11 +6,9 @@ public class SumOfEvenNumbers {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter an integer value: ");
         int num = sc.nextInt();
-        System.out.println();
         // TODO: Step 2 - Validate input
-        if (num>=2)
-        {
-            int sum = 2+num;
+        if (num >=2) {
+            int sum = (2 + num);
             System.out.print("The sum of even numbers between 2 and " + num + " is " + sum + ".");
         }
         // TODO: Step 3 - Calculate sum of even numbers
