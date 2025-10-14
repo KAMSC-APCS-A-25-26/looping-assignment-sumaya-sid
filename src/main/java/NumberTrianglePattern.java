@@ -5,7 +5,7 @@ public class NumberTrianglePattern {
                 
         // TODO: Step 1 - Get user input
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a positive integer:  ");
+        System.out.print("Enter a positive integer: ");
         int num = sc.nextInt();
 
         // TODO: Step 2 - Generate the number triangle pattern
