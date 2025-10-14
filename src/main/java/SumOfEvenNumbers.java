@@ -6,9 +6,10 @@ public class SumOfEvenNumbers {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter an integer value: ");
         int num = sc.nextInt();
+        int sum = 0;
         // TODO: Step 2 - Validate input
         if (num >=2) {
-            int sum = (2 + num);
+            sum = num+2;
             System.out.print("The sum of even numbers between 2 and " + num + " is " + sum + ".");
         }
         else
