@@ -13,7 +13,7 @@ public class SumOfEvenNumbers {
             System.out.print("Error: Input must be 2 or greater.");
         }
         // TODO: Step 3 - Calculate sum of even numbers
-        for (int j=2; j<num+2; j+=2)
+        for (int j=2; j<num+1; j+=2)
         {
             sum+=j;
         }
